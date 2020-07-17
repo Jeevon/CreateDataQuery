@@ -1,4 +1,32 @@
-module.exports = {    
+module.exports = {
+    ActiveTransactions: {
+        unit: 'Count/Second',
+        stat: [
+            'Average',
+            'Maximum'
+        ]
+    },
+    AuroraBinlogReplicaLag: {
+        unit: 'Seconds',
+        stat: [
+            'Average',
+            'Maximum'
+        ]
+    },
+    AuroraReplicaLag: {
+        unit: 'Milliseconds',
+        stat: [
+            'Average',
+            'Maximum'
+        ]
+    },
+    AuroraReplicaLagMaximum: {
+        unit: 'Milliseconds',
+        stat: [
+            'Average',
+            'Maximum'
+        ]
+    },          
     BinLogDiskUsage: {
         unit: 'Bytes',
         stat: [
@@ -6,8 +34,43 @@ module.exports = {
             'Maximum'
         ]
     },
+    BlockedTransactions: {
+        unit: 'Count/Second',
+        stat: [
+            'Average',
+            'Maximum'
+        ]
+    },
+    BufferCacheHitRatio: {
+        unit: 'Percent',
+        stat: [
+            'Average',
+            'Maximum'
+        ]
+    },
     BurstBalance: {
         unit: 'Percent',
+        stat: [
+            'Average',
+            'Maximum'
+        ]
+    },
+    CommitLatency: {
+        unit: 'Milliseconds',
+        stat: [
+            'Average',
+            'Maximum'
+        ]
+    },
+    CommitThroughput: {
+        unit: 'Count/Second',
+        stat: [
+            'Average',
+            'Maximum'
+        ]
+    },
+    CPUSurplusCreditBalance: {
+        unit: 'Count',
         stat: [
             'Average',
             'Maximum'
@@ -41,8 +104,57 @@ module.exports = {
             'Maximum'
         ]
     },
+    // DBLoad: {
+    //     unit: 'None',
+    //     stat: [
+    //         'Average',
+    //         'Maximum'
+    //     ]
+    // },
+    // DBLoadCPU: {
+    //     unit: 'None',
+    //     stat: [
+    //         'Average',
+    //         'Maximum'
+    //     ]
+    // },
+    // DBLoadNonCPU: {
+    //     unit: 'None',
+    //     stat: [
+    //         'Average',
+    //         'Maximum'
+    //     ]
+    // },
+    DDLLatency: {
+        unit: 'Milliseconds',
+        stat: [
+            'Average',
+            'Maximum'
+        ]
+    },
+    DDLThroughput: {
+        unit: 'Count/Second',
+        stat: [
+            'Average',
+            'Maximum'
+        ]
+    },
+    Deadlocks: {
+        unit: 'Count/Second',
+        stat: [
+            'Average',
+            'Maximum'
+        ]
+    },
     DiskQueueDepth: {
         unit: 'Count',
+        stat: [
+            'Average',
+            'Maximum'
+        ]
+    },
+    EngineUptime: {
+        unit: 'Seconds',
         stat: [
             'Average',
             'Maximum'
@@ -69,6 +181,27 @@ module.exports = {
             'Maximum'
         ]
     },
+    InsertThroughput: {
+        unit: 'Counts/Second',
+        stat: [
+            'Average',
+            'Maximum'
+        ]
+    },
+    LoginFailures: {
+        unit: 'Counts/Second',
+        stat: [
+            'Average',
+            'Maximum'
+        ]
+    },
+    LVMReadIOPS: {
+        unit: 'Counts/Second',
+        stat: [
+            'Average',
+            'Maximum'
+        ]
+    },
     MaximumUsedTransactionIDs: {
         unit: 'Count',
         stat: [
@@ -77,6 +210,13 @@ module.exports = {
         ]
     },
     NetworkReceiveThroughput: {
+        unit: 'Bytes/Second',
+        stat: [
+            'Average',
+            'Maximum'
+        ]
+    },
+    NetworkThroughput: {
         unit: 'Bytes/Second',
         stat: [
             'Average',
@@ -92,6 +232,13 @@ module.exports = {
     },
     OldestReplicationSlotLag: {
         unit: 'Megabytes',
+        stat: [
+            'Average',
+            'Maximum'
+        ]
+    },
+    RDSToAuroraPostgreSQLReplicaLag: {
+        unit: 'Seconds',
         stat: [
             'Average',
             'Maximum'
