@@ -52,7 +52,7 @@ module.exports = async (dir, app, arn, tables) => {
                                 Value: tables[a]
                             }]
                         },
-                        Period: 10800,
+                        Period: 300,
                         Stat: stats[c],
                         Unit: metrics[metricKeys[b]].unit
                     }

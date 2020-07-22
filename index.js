@@ -3,9 +3,9 @@ const dynamodb = require('./DynamoDB');
 const lambda = require('./Lambda');
 const unitTesting = require('./UnitTesting');
 
-//rds();
+rds();
 dynamodb();
-//lambda();
+lambda();
 
 
 unitTesting();
