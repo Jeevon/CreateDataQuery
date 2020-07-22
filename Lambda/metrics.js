@@ -1,4 +1,18 @@
 module.exports = {
+    // ConcurrentExecutions: {
+    //     unit: 'None',
+    //     stat: [
+    //         'Average',
+    //         'Maximum'
+    //     ]
+    // },
+    // Duration: {
+    //     unit: 'None',
+    //     stat: [
+    //         'Average',
+    //         'Maximum'
+    //     ]
+    // },
     Invocations: {
         unit: 'Count',
         stat: [

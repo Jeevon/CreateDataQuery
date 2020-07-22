@@ -2,24 +2,28 @@ module.exports = {
         AccountMaxReads: {
             unit: 'Count',
             stat: [
+                'Average',
                 'Maximum'
             ]
         },
         AccountMaxTableLevelReads: {
             unit: 'Count',
             stat: [
+                'Average',
                 'Maximum'
             ]
         },
         AccountMaxTableLevelWrites: {
             unit: 'Count',
             stat: [
+                'Average',
                 'Maximum'
             ]
         },
         AccountMaxWrites: {
             unit: 'Count',
             stat: [
+                'Average',
                 'Maximum'
             ]
         },
