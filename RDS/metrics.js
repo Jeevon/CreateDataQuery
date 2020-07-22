@@ -104,27 +104,27 @@ module.exports = {
             'Maximum'
         ]
     },
-    // DBLoad: {
-    //     unit: 'None',
-    //     stat: [
-    //         'Average',
-    //         'Maximum'
-    //     ]
-    // },
-    // DBLoadCPU: {
-    //     unit: 'None',
-    //     stat: [
-    //         'Average',
-    //         'Maximum'
-    //     ]
-    // },
-    // DBLoadNonCPU: {
-    //     unit: 'None',
-    //     stat: [
-    //         'Average',
-    //         'Maximum'
-    //     ]
-    // },
+     DBLoad: {
+         unit: 'None',
+         stat: [
+             'Average',
+             'Maximum'
+         ]
+     },
+     DBLoadCPU: {
+         unit: 'None',
+         stat: [
+             'Average',
+             'Maximum'
+         ]
+     },
+     DBLoadNonCPU: {
+         unit: 'None',
+         stat: [
+             'Average',
+             'Maximum'
+         ]
+     },
     DDLLatency: {
         unit: 'Milliseconds',
         stat: [
@@ -182,21 +182,21 @@ module.exports = {
         ]
     },
     InsertThroughput: {
-        unit: 'Counts/Second',
+        unit: 'Count/Second',
         stat: [
             'Average',
             'Maximum'
         ]
     },
     LoginFailures: {
-        unit: 'Counts/Second',
+        unit: 'Count/Second',
         stat: [
             'Average',
             'Maximum'
         ]
     },
     LVMReadIOPS: {
-        unit: 'Counts/Second',
+        unit: 'Count/Second',
         stat: [
             'Average',
             'Maximum'

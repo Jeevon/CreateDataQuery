@@ -1,18 +1,4 @@
 module.exports = {
-    // ConcurrentExecutions: {
-    //     unit: 'None',
-    //     stat: [
-    //         'Average',
-    //         'Maximum'
-    //     ]
-    // },
-    // Duration: {
-    //     unit: 'None',
-    //     stat: [
-    //         'Average',
-    //         'Maximum'
-    //     ]
-    // },
     Invocations: {
         unit: 'Count',
         stat: [
@@ -94,11 +80,11 @@ module.exports = {
     //        'Maximum'
     //    ]
     //},
-    UnreservedConcurrentExecutions: {
-        unit: 'Count',
-        stat: [
-            'Average',
-            'Maximum'
-        ]
-    }
+    //UnreservedConcurrentExecutions: {
+    //    unit: 'Count',
+    //    stat: [
+    //        'Average',
+    //        'Maximum'
+    //    ]
+    //}
 }
