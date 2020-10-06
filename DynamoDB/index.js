@@ -124,6 +124,6 @@ const GlobeOneTables = [
 ];
 
 module.exports = function() {
-    generate('PaymentGateway', 'Payment Gateway', 'arn:aws:dynamodb:ap-southeast-1:073504361408:table/', PaymentGatewaytables);
-    generate('GlobeOne', 'Globe One', 'arn:aws:dynamodb:ap-southeast-1:073504361408:table/', GlobeOneTables);
+    generate('PaymentGateway', 'Payment Gateway', 'arn:aws:dynamodb:ap-southeast-1:073504361408:table/', 'Tier 2A', PaymentGatewaytables);
+    generate('GlobeOne', 'Globe One', 'arn:aws:dynamodb:ap-southeast-1:073504361408:table/', 'Tier 2A', GlobeOneTables);
 }

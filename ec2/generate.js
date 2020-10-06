@@ -39,14 +39,14 @@ module.exports = function(dir, app, arn, tier, tables) {
                 
                 let thisQuery = {
                     ...query,
-                    Id: `${idchunk}_${stats[c].toLowerCase()}_dynamodb_${metric}`,
+                    Id: `${idchunk}_${stats[c].toLowerCase()}_ec2_${metric.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '')}`,
                     Label: `${app};${tables[a]};${arn}${tables[a]};${stats[c]};${metricKeys[b]};${tier}`,
                     MetricStat: {
                         Metric: {
-                            Namespace: "AWS/DynamoDB",
+                            Namespace: "AWS/EC2",
                             MetricName: metricKeys[b],
                             Dimensions: [{
-                                Name: "TableName",
+                                Name: "InstanceId",
                                 Value: tables[a]
                             }]
                         },
@@ -62,7 +62,7 @@ module.exports = function(dir, app, arn, tier, tables) {
             }
         }
 
-        //const metricsComputation = computation.dynamodb;
+        //const metricsComputation = computation.ec2;
         //const keys = Object.keys(metricsComputation);
 
         //keys.forEach(metric => {
@@ -80,7 +80,7 @@ module.exports = function(dir, app, arn, tier, tables) {
         //    }
         //});
 
-        const path = __dirname + '/../../centralizedlogger/lambda/cloudwatch-metrics/queries/DynamoDB/' + dir;
+        const path = __dirname + '/../../centralizedlogger/lambda/cloudwatch-metrics/queries/EC2/' + dir;
         if(!fs.existsSync(path)) {
             fs.mkdirSync(path, { recursive: true})
         }
@@ -102,7 +102,7 @@ module.exports = function(dir, app, arn, tier, tables) {
     exports+='];'
     let output = imports.join('\n') + '\n\n' + exports;
 
-    fs.outputFile(__dirname + `/../../centralizedlogger/lambda/cloudwatch-metrics/queries/DynamoDB/${dir}/` + dir + '.js', output, function(err) {
+    fs.outputFile(__dirname + `/../../centralizedlogger/lambda/cloudwatch-metrics/queries/EC2/${dir}/` + dir + '.js', output, function(err) {
         if (err) {
             console.log(err);
         }

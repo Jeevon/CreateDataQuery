@@ -1,7 +1,7 @@
 const fs = require('fs-extra');
 const metrics = require('./metrics');
 
-module.exports = async (dir, app, arn, tables) => {
+module.exports = async (dir, app, arn, tier, tables) => {
     //function ensureExists(path, mask, cb) {
     //    if (typeof mask == 'function') { // allow the `mask` parameter to be optional
     //        cb = mask;
@@ -30,6 +30,7 @@ module.exports = async (dir, app, arn, tables) => {
     for (let a = 0; a < tables.length; a++) {
         let metricKeys = Object.keys(metrics);
         let output = [];
+        const availableMetrics = [];
         for (let b = 0; b < metricKeys.length; b++) {
             let stats = metrics[metricKeys[b]].stat;
             for (let c = 0; c < stats.length; c++) {
@@ -42,7 +43,7 @@ module.exports = async (dir, app, arn, tables) => {
                 let thisQuery = {
                     ...query,
                     Id: `${idchunk}_${stats[c].toLowerCase()}_rds_${metric}`,
-                    Label: `${app};${tables[a]};${arn}${tables[a]};${stats[c]};${metricKeys[b]}`,
+                    Label: `${app};${tables[a]};${arn}${tables[a]};${stats[c]};${metricKeys[b]};${tier}`,
                     MetricStat: {
                         Metric: {
                             Namespace: "AWS/RDS",
@@ -58,11 +59,36 @@ module.exports = async (dir, app, arn, tables) => {
                     }
                 }
 
+                availableMetrics.push(`${metricKeys[b]}-${stats[c]}`);
+
                 output.push(thisQuery);
             }
         }
 
-        fs.outputFile(__dirname + '/../../centralizedlogger/lambda/cloudwatch-metrics/queries/RDS/' + dir + '/' + tables[a] + '.js', 'module.exports = ' + JSON.stringify(output), function(err) {
+        //const metricsComputation = computation.rds;
+        //const keys = Object.keys(metricsComputation);
+
+        //keys.forEach(metric => {
+        //    const aIndex = availableMetrics.indexOf(metric);
+        //    const bIndex = availableMetrics.indexOf(metricsComputation[metric]);
+        //    if(aIndex >= 0 && bIndex >= 0) { 
+        //        const expressionLabel = output[aIndex].Label.split(';');
+        //        expressionLabel[4] = `${expressionLabel[4]}_Percent`
+
+        //        output.push({
+        //            Id: `${output[aIndex].Id}_percent`,
+        //            Label: expressionLabel.join(';'),
+        //            Expression: `${output[aIndex].Id} / ${output[bIndex].Id} * 100` 
+        //        });
+        //    }
+        //});
+
+        const path = __dirname + '/../../centralizedlogger/lambda/cloudwatch-metrics/queries/RDS/' + dir;
+        if(!fs.existsSync(path)) {
+            fs.mkdirSync(path, { recursive: true})
+        }
+
+        fs.outputFile(path + '/' + tables[a] + '.js', 'module.exports = ' + JSON.stringify(output), function(err) {
             if (err) {
                 console.log(err);
             }

@@ -32,20 +32,20 @@ module.exports = {
             'Maximum'
         ]
     },
-    //ProvisionedConcurrencyInvocations: {
-    //    unit: 'Count',
-    //    stat: [
-    //        'Average',
-    //        'Maximum'
-    //    ]
-    //},
-    //ProvisionedConcurrencySpilloverInvocations: {
-    //    unit: 'Count',
-    //    stat: [
-    //        'Average',
-    //        'Maximum'
-    //    ]
-    //},
+    ProvisionedConcurrencyInvocations: {
+        unit: 'Count',
+        stat: [
+            'Average',
+            'Maximum'
+        ]
+    },
+    ProvisionedConcurrencySpilloverInvocations: {
+        unit: 'Count',
+        stat: [
+            'Average',
+            'Maximum'
+        ]
+    },
     Duration: {
         unit: 'Milliseconds',
         stat: [
@@ -66,25 +66,25 @@ module.exports = {
             'Maximum'
         ]
     },
-    //ProvisionedConcurrentExecutions: {
-    //    unit: 'Count',
-    //    stat: [
-    //        'Average',
-    //        'Maximum'
-    //    ]
-    //},
-    //ProvisionedConcurrencyUtilization: {
-    //    unit: 'Count',
-    //    stat: [
-    //        'Average',
-    //        'Maximum'
-    //    ]
-    //},
-    //UnreservedConcurrentExecutions: {
-    //    unit: 'Count',
-    //    stat: [
-    //        'Average',
-    //        'Maximum'
-    //    ]
-    //}
+    ProvisionedConcurrentExecutions: {
+        unit: 'Count',
+        stat: [
+            'Average',
+            'Maximum'
+        ]
+    },
+    ProvisionedConcurrencyUtilization: {
+        unit: 'Count',
+        stat: [
+            'Average',
+            'Maximum'
+        ]
+    },
+    UnreservedConcurrentExecutions: {
+        unit: 'Count',
+        stat: [
+            'Average',
+            'Maximum'
+        ]
+    }
 }
