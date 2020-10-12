@@ -57,5 +57,5 @@ module.exports = async () => {
     await generate('NFBus', 'NF Bus', 'arn:aws:rds:ap-southeast-1:587852665253:db:', 'Tier 2', nfbus);
     await generate('OC3', 'OC3', 'arn:aws:rds:ap-southeast-1:073504361408:db:', '', oc3);
     await generate('Ripley', 'RIPLEY', 'arn:aws:rds:ap-southeast-1:073504361408:db:', 'Tier 2', ripley);
-    await generate('AESOP', 'AESOP', 'arn:aws:rds:ap-southeast-1:073504361408:db:vmpnsdpd01', 'Tier 2', aesop);
+    await generate('AESOP', 'AESOP', 'arn:aws:rds:ap-southeast-1:073504361408:db:', 'Tier 2', aesop);
 }
