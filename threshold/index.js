@@ -15,17 +15,17 @@ module.exports = async () => {
                     result[record.resource_type.toLowerCase()][record.resource_name][record.metric_name] = {}
                 }
 
-                result[record.resource_type.toLowerCase()][record.resource_name][record.metric_name][record.threshold]  = parseInt(record.metric_value);
+                result[record.resource_type.toLowerCase()][record.resource_name][record.metric_name][record.threshold]  = parseInt(record.metric_value.replace(/,/g, ''));
             } else {
                 result[record.resource_type.toLowerCase()][record.resource_name] = {}
                 result[record.resource_type.toLowerCase()][record.resource_name][record.metric_name] = {}
-                result[record.resource_type.toLowerCase()][record.resource_name][record.metric_name][record.threshold]  = parseInt(record.metric_value);
+                result[record.resource_type.toLowerCase()][record.resource_name][record.metric_name][record.threshold]  = parseInt(record.metric_value.replace(/,/g, ''));
             }
         } else {
             result[record.resource_type.toLowerCase()] = {}
             result[record.resource_type.toLowerCase()][record.resource_name] = {}
             result[record.resource_type.toLowerCase()][record.resource_name][record.metric_name] = {}
-            result[record.resource_type.toLowerCase()][record.resource_name][record.metric_name][record.threshold]  = parseInt(record.metric_value);
+            result[record.resource_type.toLowerCase()][record.resource_name][record.metric_name][record.threshold]  = parseInt(record.metric_value.replace(/,/g, ''));
         }
     }
 
